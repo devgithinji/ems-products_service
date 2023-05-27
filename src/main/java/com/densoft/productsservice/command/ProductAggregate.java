@@ -1,6 +1,6 @@
 package com.densoft.productsservice.command;
 
-import com.densoft.productsservice.coreEvents.ProductCreatedEvent;
+import com.densoft.productsservice.core.events.ProductCreatedEvent;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;

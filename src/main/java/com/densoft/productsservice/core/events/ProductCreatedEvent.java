@@ -1,4 +1,4 @@
-package com.densoft.productsservice.coreEvents;
+package com.densoft.productsservice.core.events;
 
 import lombok.Data;
 
