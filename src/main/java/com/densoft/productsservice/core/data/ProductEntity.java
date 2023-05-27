@@ -14,7 +14,6 @@ import java.math.BigDecimal;
 @Table(name = "products")
 public class ProductEntity implements Serializable {
     @Id
-    @Column(unique = true)
     private String productId;
     @Column(unique = true)
     private String title;
