@@ -1,4 +1,4 @@
-package com.densoft.productsservice.rest;
+package com.densoft.productsservice.command.rest;
 
 import com.densoft.productsservice.command.CreateProductCommand;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +11,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/products")
 @RequiredArgsConstructor
-public class ProductsController {
+public class ProductsCommandController {
 
     private final Environment environment;
     private final CommandGateway commandGateway;
