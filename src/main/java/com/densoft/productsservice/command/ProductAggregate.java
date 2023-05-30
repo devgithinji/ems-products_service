@@ -37,6 +37,8 @@ public class ProductAggregate {
         BeanUtils.copyProperties(createProductCommand, productCreatedEvent);
         //  publish event
         AggregateLifecycle.apply(productCreatedEvent);
+
+
     }
 
     @EventSourcingHandler
