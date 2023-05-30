@@ -6,6 +6,7 @@ import com.densoft.productsservice.core.events.ProductCreatedEvent;
 import lombok.RequiredArgsConstructor;
 import org.axonframework.config.ProcessingGroup;
 import org.axonframework.eventhandling.EventHandler;
+import org.axonframework.messaging.interceptors.ExceptionHandler;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,17 @@ import org.springframework.stereotype.Component;
 @ProcessingGroup("product-group")
 public class ProductsEventsHandler {
     private final ProductsRepository productsRepository;
+
+    @ExceptionHandler(resultType = IllegalStateException.class)
+    public void handle(IllegalArgumentException exception) {
+        //log error general message
+    }
+
+    @ExceptionHandler(resultType = Exception.class)
+    public void handle(Exception exception) throws Exception {
+        //log error message
+        throw exception;
+    }
 
     @EventHandler
     public void on(ProductCreatedEvent event) {
