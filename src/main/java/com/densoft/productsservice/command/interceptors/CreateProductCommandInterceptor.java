@@ -22,7 +22,9 @@ public class CreateProductCommandInterceptor implements MessageDispatchIntercept
     @Override
     public BiFunction<Integer, CommandMessage<?>, CommandMessage<?>> handle(List<? extends CommandMessage<?>> list) {
         return ((integer, commandMessage) -> {
+
             log.info("Intercepted command: " + commandMessage.getPayloadType());
+
             if (CreateProductCommand.class.equals(commandMessage.getPayloadType())) {
 
                 CreateProductCommand createProductCommand = (CreateProductCommand) commandMessage.getPayload();
@@ -34,6 +36,7 @@ public class CreateProductCommandInterceptor implements MessageDispatchIntercept
                 }
 
             }
+
             return commandMessage;
         });
     }
