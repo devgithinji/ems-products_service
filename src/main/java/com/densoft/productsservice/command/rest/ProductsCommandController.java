@@ -23,6 +23,7 @@ public class ProductsCommandController {
 
     @PostMapping
     public String createProduct(@Valid @RequestBody CreateProductRestModel createProductRestModel) {
+
         CreateProductCommand createProductCommand = CreateProductCommand.builder()
                 .price(createProductRestModel.getPrice())
                 .title(createProductRestModel.getTitle())
